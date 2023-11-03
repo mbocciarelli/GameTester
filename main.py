@@ -6,7 +6,7 @@ from Controller.Game import Game
 logger = logging.getLogger(__name__)
 
 def main():
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
     logger.info("Hey !")
 
     player_name = input("Player name : ")
