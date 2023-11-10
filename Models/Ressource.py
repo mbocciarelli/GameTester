@@ -17,3 +17,11 @@ class Ressource:
             self.Stone + o.Stone,
             self.Gold + o.Gold,
         )
+    
+    def __mul__(self, o):
+        return Ressource(
+            self.Wheat * o,
+            self.Wood * o,
+            self.Stone * o,
+            self.Gold * o,
+        )

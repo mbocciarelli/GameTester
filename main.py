@@ -9,9 +9,9 @@ def main():
     logging.basicConfig(level=logging.DEBUG)
     logger.info("Hey !")
 
-    player_name = input("Player name : ")
+    # player_name = input("Player name : ")
 
-    game = Game(player_name)
+    game = Game("player_name")
     game.game_loop()
     return
 

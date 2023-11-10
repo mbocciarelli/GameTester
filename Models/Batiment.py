@@ -14,23 +14,25 @@ class Batiment:
 
 class Collecteur(Batiment):
     timing: int
+    timing_max: int
     ressource: Ressource
 
-    def __init__(self, name, lvl, cost, ressource, timing):
-        super(Collecteur, self).__init__(name, lvl, cost)
+    def __init__(self, name, lvl, cost, ressource, timing_max):
+        super().__init__(name, lvl, cost)
         self.ressource = ressource
-        self.timing = timing
+        self.timing_max = timing_max
+        self.timing = 0
 
 class Storage(Batiment):
     storage: Ressource
 
     def __init__(self, name, lvl, cost, storage):
-        super(Collecteur, self).__init__(name, lvl, cost)
+        super().__init__(name, lvl, cost)
         self.storage = storage
 
 class Base:
-    chateau: Storage = None
-    reserve: Storage = None
+    chateau: Storage
+    reserve: Optional[Storage] = None
     collecteurs: List[Collecteur] = []
 
     def __init__(self):
@@ -40,3 +42,8 @@ class Base:
         if self.reserve is not None:
             return self.chateau.storage + self.reserve.storage
         return self.chateau.storage
+    
+    def to_string(self) -> str:
+        ressource = self.get_max_reserve()
+        message = f'Ressource Max : \n Wheat = {ressource.Wheat}, Wood = {ressource.Wood}, Stone = {ressource.Stone}, Gold = {ressource.Gold}'
+        return message
