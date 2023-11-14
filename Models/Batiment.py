@@ -22,6 +22,10 @@ class Collecteur(Batiment):
         self.ressource = ressource
         self.timing_max = timing_max
         self.timing = 0
+    
+    def display_info(self) -> str:
+        message = f'{self.name}({self.lvl})'
+        return message
 
 class Storage(Batiment):
     storage: Ressource
@@ -36,14 +40,24 @@ class Base:
     collecteurs: List[Collecteur] = []
 
     def __init__(self):
-        self.chateau = Storage("Chateau", 1, Ressource(0, 0, 0, 0), Ressource(5000, 5000, 5000, 5000))
+        # self.chateau = Storage("Chateau", 1, Ressource(0, 0, 0, 0), Ressource(5000, 5000, 5000, 5000))
+        return
 
     def get_max_reserve(self) -> Ressource:
         if self.reserve is not None:
             return self.chateau.storage + self.reserve.storage
         return self.chateau.storage
     
-    def to_string(self) -> str:
+    def display_reserve(self) -> str:
         ressource = self.get_max_reserve()
-        message = f'Ressource Max : \n Wheat = {ressource.Wheat}, Wood = {ressource.Wood}, Stone = {ressource.Stone}, Gold = {ressource.Gold}'
+        message = f'Ressource Max : \n Wheat = {ressource.Wheat}\n Wood = {ressource.Wood}\n Stone = {ressource.Stone}\n Gold = {ressource.Gold}'
+        return message
+    
+    def display_infos(self) -> str:
+        message = ''
+        for c in self.collecteurs:
+            message += c.display_info()
+            if self.collecteurs.index(c) != (len(self.collecteurs) - 1):
+                message += ', '
+        
         return message

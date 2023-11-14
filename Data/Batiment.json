@@ -1,75 +1,162 @@
 {
-    "collecteurs" : [
-        {
-            "name": "Test1",
-            "lvl": 1,
-            "timing_max": 30,
-            "cost": {
-                "wheat": 0,
-                "wood": 0,
-                "stone": 0,
-                "gold": 0
-
+    "chateau": {
+        "name": "Chateau",
+        "lvl": 1,
+        "lvls": {
+            "1": {
+                "cost": {
+                    "wheat": 0,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                },
+                "ressource": {
+                    "wheat": 5,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                }
             },
-            "ressource": {
-                "wheat": 15,
-                "wood": 15,
-                "stone": 15,
-                "gold": 15
+            "2": {
+                "cost": {
+                    "wheat": 0,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                },
+                "ressource": {
+                    "wheat": 5,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                }
+            },
+            "3": {
+                "cost": {
+                    "wheat": 0,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                },
+                "ressource": {
+                    "wheat": 5,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                }
+            },
+            "4": {
+                "cost": {
+                    "wheat": 0,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                },
+                "ressource": {
+                    "wheat": 5,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                }
             }
-        },
-        {
-            "name": "Test1",
-            "lvl": 1,
-            "timing_max": 30,
-            "cost": {
-                "wheat": 0,
-                "wood": 0,
-                "stone": 0,
-                "gold": 0
-
+        }
+    },
+    "reserve": {
+        "name": "Reserve",
+        "lvl": 1,
+        "lvls": {
+            "1": {
+                "cost": {
+                    "wheat": 0,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                },
+                "ressource": {
+                    "wheat": 5,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                }
             },
-            "ressource": {
-                "wheat": 15,
-                "wood": 15,
-                "stone": 15,
-                "gold": 15
+            "2": {
+                "cost": {
+                    "wheat": 0,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                },
+                "ressource": {
+                    "wheat": 5,
+                    "wood": 0,
+                    "stone": 0,
+                    "gold": 0
+                }
             }
-        },
+        }
+    },
+    "collecteurs": [
         {
             "name": "Test1",
             "lvl": 1,
             "timing_max": 30,
-            "cost": {
-                "wheat": 0,
-                "wood": 0,
-                "stone": 0,
-                "gold": 0
-
-            },
-            "ressource": {
-                "wheat": 15,
-                "wood": 15,
-                "stone": 15,
-                "gold": 15
-            }
-        },
-        {
-            "name": "Test1",
-            "lvl": 1,
-            "timing_max": 30,
-            "cost": {
-                "wheat": 0,
-                "wood": 0,
-                "stone": 0,
-                "gold": 0
-
-            },
-            "ressource": {
-                "wheat": 15,
-                "wood": 15,
-                "stone": 15,
-                "gold": 15
+            "lvls": {
+                "1": {
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 5,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "2": {
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 5,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "3": {
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 5,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "4": {
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 5,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                }
             }
         }
     ]
