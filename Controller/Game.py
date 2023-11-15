@@ -1,10 +1,11 @@
-import os
+from os import system, name
 import logging
-import json
 from typing import List
 
 from Models.Player import Player
-from Models.Batiment import Base, Collecteur, Ressource, Storage
+from Models.Batiment import Base
+
+from Controller.Loader.Loader import load_json, load_upgrade_to
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -27,17 +28,21 @@ def timing_to_add(timing: str) -> int:
 
 class Game:
     def __init__(self, player_name: str) -> None:
-        self.player = Player(player_name)
-        self.base = Base()
+        self.player : Player = Player(player_name)
+        self.base : Base = None
         self.global_time: int = 0
 
     def game_loop(self) -> None:
 
-        self.load_json()
-        clear = lambda: os.system('cls')
+        self.base = load_json()
+        if name == 'nt': 
+            clear = lambda: system('cls')
+        else: 
+            clear = lambda: system('clear')
 
         args = ""
 
+        clear()
         while args!="q":
             args = input("input : ")
             time = timing_to_add(args)
@@ -51,6 +56,9 @@ class Game:
 
                     c.timing = c.timing % c.timing_max
 
+            if self.Is_necessary_to_upgrade_Chateau(self.global_time) == True:
+                self.Upgrade_Chateau()
+
             clear()
 
             self.display_timing(time)
@@ -58,6 +66,31 @@ class Game:
             pass
 
         logger.info("Stop loop Game")
+
+
+    def Is_necessary_to_upgrade_Chateau(self, time) -> bool:
+        match self.base.chateau.lvl:
+            case 1:
+                if time >= (15 * 60): # 15 mins
+                    return True
+            case 2:
+                if time >= (30 * 60): # 30 mins
+                    return True
+            case 3:
+                if time >= (1 * 60 * 60): # 1 h
+                    return True
+            case 4:
+                if time >= (1 * 60 * 60 + 45 * 60): # 1 h 45 mins
+                    return True
+            case _:
+                return False
+        return False
+
+    def Upgrade_Chateau(self):
+        self.base.chateau.lvl += 1
+        cost, _ = load_upgrade_to("chateau", self.base.chateau.lvl)
+        self.base.chateau.cost = cost
+        return
 
     def display_timing(self, time: int) -> None:
         logger.debug("Timing : %s", time)
@@ -69,31 +102,10 @@ class Game:
 
     def to_string(self) -> None:
         logger.info(f'')
+        logger.info(f'Chateau - ' + self.base.chateau.name + f'({self.base.chateau.lvl})')
+        logger.info(f'')
         logger.info(f'Base - ' + self.base.display_reserve() + '\n')
         logger.info(f'Player - ' + self.player.display_reserve())
         logger.info(f'')
         logger.info(f'Batiments - ' + self.base.display_infos())
         logger.info(f'')
-
-    def load_json(self) -> None:
-        f = open('Data/Batiment.json', "r")
-        data = json.loads(f.read())
-
-        chateau = data['chateau']
-        cost = Ressource(chateau["lvls"]["1"]['cost']['wheat'], chateau["lvls"]["1"]['cost']['wood'], chateau["lvls"]["1"]['cost']['stone'], chateau["lvls"]["1"]['cost']['gold'])
-        ressource = Ressource(chateau["lvls"]["1"]['ressource']['wheat'], chateau["lvls"]["1"]['ressource']['wood'], chateau["lvls"]["1"]['ressource']['stone'], chateau["lvls"]["1"]['ressource']['gold'])
-        self.base.chateau = Storage(chateau['name'], chateau['lvl'], cost, ressource)
-
-        for collecteur in data['collecteurs']:
-            cost = Ressource(collecteur["lvls"]["1"]['cost']['wheat'], collecteur["lvls"]["1"]['cost']['wood'], collecteur["lvls"]["1"]['cost']['stone'], collecteur["lvls"]["1"]['cost']['gold'])
-            ressource = Ressource(collecteur["lvls"]["1"]['ressource']['wheat'], collecteur["lvls"]["1"]['ressource']['wood'], collecteur["lvls"]["1"]['ressource']['stone'], collecteur["lvls"]["1"]['ressource']['gold'])
-
-            self.base.collecteurs.append(Collecteur(
-                collecteur['name'],
-                collecteur['lvl'],
-                cost,
-                ressource,
-                collecteur['timing_max']
-            ))
-
-        f.close()
