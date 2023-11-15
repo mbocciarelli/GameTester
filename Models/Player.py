@@ -11,3 +11,7 @@ class Player:
     def display_reserve(self) -> str:
         message = f'Mes ressources : \n Wheat = {self.current_storage.Wheat}\n Wood = {self.current_storage.Wood}\n Stone = {self.current_storage.Stone}\n Gold = {self.current_storage.Gold}'
         return message
+    
+    def log_display_reserve(self) -> str:
+        message = f'({self.current_storage.Wheat}, {self.current_storage.Wood}, {self.current_storage.Stone}, {self.current_storage.Gold})'
+        return message

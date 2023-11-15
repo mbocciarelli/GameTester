@@ -1,11 +1,11 @@
 from os import system, name
 import logging
-from typing import List
+from typing import List, Dict
 
 from Models.Player import Player
 from Models.Batiment import Base
 
-from Controller.Loader.Loader import load_json, load_upgrade_to
+from Controller.Loader.Loader import load_json, load_upgrade_to, write_in_log_file
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -34,6 +34,7 @@ class Game:
 
     def game_loop(self) -> None:
 
+        self.log_init()
         self.base = load_json()
         if name == 'nt': 
             clear = lambda: system('cls')
@@ -63,6 +64,7 @@ class Game:
 
             self.display_timing(time)
             self.to_string()
+            self.log_display(args)
             pass
 
         logger.info("Stop loop Game")
@@ -91,14 +93,19 @@ class Game:
         cost, _ = load_upgrade_to("chateau", self.base.chateau.lvl)
         self.base.chateau.cost = cost
         return
+    
+    def calculate_time(self, time: int) -> Dict:
+        result = {}
+        result["hour"] = self.global_time // 3600
+        result["min"] = (self.global_time % 3600) // 60
+        result["sec"] = ((self.global_time % 3600) % 60)
+        return result
 
     def display_timing(self, time: int) -> None:
         logger.debug("Timing : %s", time)
-        hour = self.global_time // 3600
-        min = (self.global_time % 3600) // 60
-        sec = ((self.global_time % 3600) % 60)
+        timing = self.calculate_time(time)
 
-        logger.info("Timing Global : %sh %sm %ss", hour, min, sec)
+        logger.info("Timing Global : %sh %sm %ss", timing["hour"], timing["min"], timing["sec"])
 
     def to_string(self) -> None:
         logger.info(f'')
@@ -109,3 +116,21 @@ class Game:
         logger.info(f'')
         logger.info(f'Batiments - ' + self.base.display_infos())
         logger.info(f'')
+
+    def log_init(self) -> None:
+        message = "\nNew Partie\n"
+        write_in_log_file(message)
+
+    def log_display(self, args) -> None:
+        message = args
+        message += ' - '
+        message += self.base.chateau.name + f'({self.base.chateau.lvl})'
+        message += ' - '
+        message += self.base.log_display_reserve()
+        message += ' - '
+        message += self.player.log_display_reserve()
+        message += ' - '
+        message += self.base.display_infos()
+        message += '\n'
+
+        write_in_log_file(message)

@@ -53,3 +53,10 @@ def load_upgrade_to(str_ressource, lvl) -> Tuple[Ressource, Ressource]:
     ressource = Ressource(ressource_data['wheat'], ressource_data['wood'], ressource_data['stone'], ressource_data['gold'])
 
     return cost, ressource
+
+def write_in_log_file(str) -> None:
+    f = open('Data/Log.txt', "a")
+
+    f.write(str)
+
+    f.close()

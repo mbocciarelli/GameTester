@@ -53,6 +53,11 @@ class Base:
         message = f'Ressource Max : \n Wheat = {ressource.Wheat}\n Wood = {ressource.Wood}\n Stone = {ressource.Stone}\n Gold = {ressource.Gold}'
         return message
     
+    def log_display_reserve(self) -> str:
+        ressource = self.get_max_reserve()
+        message = f'({ressource.Wheat}, {ressource.Wood}, {ressource.Stone}, {ressource.Gold})'
+        return message
+    
     def display_infos(self) -> str:
         message = ''
         for c in self.collecteurs:
