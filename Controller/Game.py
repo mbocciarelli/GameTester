@@ -58,7 +58,10 @@ class Game:
                     c.timing = c.timing % c.timing_max
 
             if self.Is_necessary_to_upgrade_Chateau(self.global_time) == True:
-                self.Upgrade_Chateau()
+                self.base.Upgrade_Chateau()
+
+            # if self.Is_necessary_to_add_collecteur() == True:
+            #     self.Add_Collecteur()
 
             clear()
 
@@ -71,6 +74,9 @@ class Game:
 
 
     def Is_necessary_to_upgrade_Chateau(self, time) -> bool:
+        if (self.player.current_storage >= self.base.chateau.cost) == False: 
+            return False
+
         match self.base.chateau.lvl:
             case 1:
                 if time >= (15 * 60): # 15 mins
@@ -87,12 +93,6 @@ class Game:
             case _:
                 return False
         return False
-
-    def Upgrade_Chateau(self):
-        self.base.chateau.lvl += 1
-        cost, _ = load_upgrade_to("chateau", self.base.chateau.lvl)
-        self.base.chateau.cost = cost
-        return
     
     def calculate_time(self, time: int) -> Dict:
         result = {}

@@ -2,6 +2,8 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 from Models.Ressource import Ressource
 
+from Controller.Loader.Loader import load_upgrade_to
+
 class Batiment:
     name: str
     lvl: int
@@ -15,17 +17,26 @@ class Batiment:
 class Collecteur(Batiment):
     timing: int
     timing_max: int
+    type: str
     ressource: Ressource
 
-    def __init__(self, name, lvl, cost, ressource, timing_max):
+    def __init__(self, name, type, lvl, cost, ressource, timing_max):
         super().__init__(name, lvl, cost)
         self.ressource = ressource
         self.timing_max = timing_max
         self.timing = 0
+        self.type = type
     
     def display_info(self) -> str:
         message = f'{self.name}({self.lvl})'
         return message
+    
+    def Upgrade(self):
+        self.lvl += 1
+        cost, ressource = load_upgrade_to("collecteurs", self.type, self.lvl)
+        self.cost = cost
+        self.ressource = ressource
+        return
 
 class Storage(Batiment):
     storage: Ressource
@@ -66,3 +77,10 @@ class Base:
                 message += ', '
         
         return message
+    
+    def Upgrade_Chateau(self):
+        self.chateau.lvl += 1
+        cost, storage = load_upgrade_to("chateau", "", self.chateau.lvl)
+        self.chateau.cost = cost
+        self.chateau.storage = storage
+        return

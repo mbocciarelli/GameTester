@@ -8,11 +8,11 @@
                     "stone": 0,
                     "gold": 0
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "storage": {
+                    "wheat": 1000,
+                    "wood": 1000,
+                    "stone": 1000,
+                    "gold": 1000
                 }
             },
             "2": {
@@ -22,11 +22,11 @@
                     "stone": 0,
                     "gold": 0
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "storage": {
+                    "wheat": 2000,
+                    "wood": 2000,
+                    "stone": 2000,
+                    "gold": 2000
                 }
             },
             "3": {
@@ -36,11 +36,11 @@
                     "stone": 0,
                     "gold": 0
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "storage": {
+                    "wheat": 5000,
+                    "wood": 5000,
+                    "stone": 5000,
+                    "gold": 5000
                 }
             },
             "4": {
@@ -50,11 +50,11 @@
                     "stone": 0,
                     "gold": 0
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "storage": {
+                    "wheat": 10000,
+                    "wood": 10000,
+                    "stone": 10000,
+                    "gold": 10000
                 }
             },
             "5": {
@@ -64,11 +64,11 @@
                     "stone": 0,
                     "gold": 0
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "storage": {
+                    "wheat": 25000,
+                    "wood": 25000,
+                    "stone": 25000,
+                    "gold": 25000
                 }
             }
         }
@@ -82,11 +82,11 @@
                     "stone": 0,
                     "gold": 0
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "storage": {
+                    "wheat": 1000,
+                    "wood": 1000,
+                    "stone": 1000,
+                    "gold": 1000
                 }
             },
             "2": {
@@ -96,7 +96,7 @@
                     "stone": 0,
                     "gold": 0
                 },
-                "ressource": {
+                "storage": {
                     "wheat": 5,
                     "wood": 0,
                     "stone": 0,
@@ -106,65 +106,259 @@
         }
     },
     "collecteurs" : {
-        "lvls": {
-            "1": {
-                "timing_max": 30,
-                "cost": {
-                    "wheat": 0,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+        "wheat" : {
+            "lvls": {
+                "1": {
+                    "timing_max": 15,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 4,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "2": {
+                    "timing_max": 15,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "3": {
+                    "timing_max": 15,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "4": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
                 }
-            },
-            "2": {
-                "timing_max": 30,
-                "cost": {
-                    "wheat": 0,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+            }
+        },
+        "wood" : {
+            "lvls": {
+                "1": {
+                    "timing_max": 15,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 4,
+                        "stone": 0,
+                        "gold": 0
+                    }
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "2": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "3": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "4": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
                 }
-            },
-            "3": {
-                "timing_max": 30,
-                "cost": {
-                    "wheat": 0,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+            }
+        },
+        "stone" : {
+            "lvls": {
+                "1": {
+                    "timing_max": 15,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 4,
+                        "gold": 0
+                    }
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "2": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "3": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "4": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
                 }
-            },
-            "4": {
-                "timing_max": 30,
-                "cost": {
-                    "wheat": 0,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+            }
+        },
+        "gold" : {
+            "lvls": {
+                "1": {
+                    "timing_max": 15,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 1
+                    }
                 },
-                "ressource": {
-                    "wheat": 5,
-                    "wood": 0,
-                    "stone": 0,
-                    "gold": 0
+                "2": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "3": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
+                },
+                "4": {
+                    "timing_max": 30,
+                    "cost": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    },
+                    "ressource": {
+                        "wheat": 0,
+                        "wood": 0,
+                        "stone": 0,
+                        "gold": 0
+                    }
                 }
             }
         }

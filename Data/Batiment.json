@@ -9,7 +9,23 @@
     },
     "collecteurs": [
         {
-            "name": "Test1",
+            "name": "Wheat1",
+            "type": "wheat",
+            "lvl": 1
+        },
+        {
+            "name": "Wood1",
+            "type": "wood",
+            "lvl": 1
+        },
+        {
+            "name": "Stone1",
+            "type": "stone",
+            "lvl": 1
+        },
+        {
+            "name": "Gold1",
+            "type": "gold",
             "lvl": 1
         }
     ]

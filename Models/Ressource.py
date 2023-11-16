@@ -25,3 +25,6 @@ class Ressource:
             self.Stone * o,
             self.Gold * o,
         )
+    
+    def __ge__(self, o):
+        return self.Wheat >= o.Wheat and self.Wood > o.Wood and self.Stone >= o.Stone and self.Gold >= o.Gold

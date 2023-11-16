@@ -19,3 +19,26 @@ New Partie
 2m - Chateau(4) - (5, 0, 0, 0) - (950, 0, 0, 0) - Test1(1)
 30m - Chateau(5) - (5, 0, 0, 0) - (1250, 0, 0, 0) - Test1(1)
 q - Chateau(5) - (5, 0, 0, 0) - (1250, 0, 0, 0) - Test1(1)
+
+New Partie
+
+New Partie
+
+New Partie
+30m - Chateau(2) - (2000, 2000, 2000, 2000) - (240, 240, 240, 60) - Test1(1), Test1(1), Test1(1), Test1(1)
+q - Chateau(3) - (5000, 5000, 5000, 5000) - (240, 240, 240, 60) - Test1(1), Test1(1), Test1(1), Test1(1)
+
+New Partie
+15s - Chateau(1) - (1000, 1000, 1000, 1000) - (0, 0, 0, 0) - Test1(1), Test1(1), Test1(1), Test1(1)
+10m - Chateau(1) - (1000, 1000, 1000, 1000) - (80, 80, 80, 20) - Test1(1), Test1(1), Test1(1), Test1(1)
+4m - Chateau(1) - (1000, 1000, 1000, 1000) - (112, 112, 112, 28) - Test1(1), Test1(1), Test1(1), Test1(1)
+q - Chateau(1) - (1000, 1000, 1000, 1000) - (112, 112, 112, 28) - Test1(1), Test1(1), Test1(1), Test1(1)
+
+New Partie
+14m - Chateau(1) - (1000, 1000, 1000, 1000) - (224, 224, 224, 56) - Test1(1), Test1(1), Test1(1), Test1(1)
+q - Chateau(1) - (1000, 1000, 1000, 1000) - (224, 224, 224, 56) - Test1(1), Test1(1), Test1(1), Test1(1)
+
+New Partie
+14m - Chateau(1) - (1000, 1000, 1000, 1000) - (224, 224, 224, 56) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
+2m - Chateau(2) - (2000, 2000, 2000, 2000) - (256, 256, 256, 64) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
+q - Chateau(2) - (2000, 2000, 2000, 2000) - (256, 256, 256, 64) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
