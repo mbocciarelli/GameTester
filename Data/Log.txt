@@ -42,3 +42,9 @@ New Partie
 14m - Chateau(1) - (1000, 1000, 1000, 1000) - (224, 224, 224, 56) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
 2m - Chateau(2) - (2000, 2000, 2000, 2000) - (256, 256, 256, 64) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
 q - Chateau(2) - (2000, 2000, 2000, 2000) - (256, 256, 256, 64) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
+
+New Partie
+30s - Chateau(1) - (1000, 1000, 1000, 1000) - (8, 8, 8, 2) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
+15s - Chateau(1) - (1000, 1000, 1000, 1000) - (12, 12, 12, 3) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
+20m - Chateau(2) - (2000, 2000, 2000, 2000) - (332, 332, 332, 83) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)
+q - Chateau(2) - (2000, 2000, 2000, 2000) - (332, 332, 332, 83) - Wheat1(1), Wood1(1), Stone1(1), Gold1(1)

@@ -2,8 +2,6 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 from Models.Ressource import Ressource
 
-from Controller.Loader.Loader import load_upgrade_to
-
 class Batiment:
     name: str
     lvl: int
@@ -84,3 +82,6 @@ class Base:
         self.chateau.cost = cost
         self.chateau.storage = storage
         return
+    
+
+from Controller.Loader.Loader import load_upgrade_to
